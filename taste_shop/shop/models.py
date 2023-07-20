@@ -33,7 +33,7 @@ class Group(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.titl
+        return self.title
 
     class Meta:
         ordering = ('title',)
