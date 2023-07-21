@@ -1,8 +1,13 @@
-from django.shortcuts import get_object_or_404, redirect, render
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import CardShopItem
 
 app_name = 'posts'
 
 
 def index(request):
-    return render(request, 'shop_start/base.html')
+    lot = CardShopItem.objects.all()
+    context = {
+        'page_obj': lot
+    }
+    return render(request, 'shop_start/index.html', context)

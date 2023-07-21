@@ -1,0 +1,47 @@
+body{
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+    position: relative;
+}
+header{
+    margin-top: 30px;
+}
+article{
+    display: flex;
+}
+body > main > div > article > div > div.lot-where_image_desk > div.lot-image > img{
+    width: 330px;
+    height: 400px;
+}
+.article-lot{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.lot-where_image_desk{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lot-text{
+    text-align: center;
+}
+.head-arc{
+  font-family: 'Roboto', sans-serif;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.container{
+    display: flex;
+    gap: 54px 20%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 48px;
+    justify-content: center;
+}

@@ -2,10 +2,9 @@ from django.contrib import admin
 
 
 from .models import (
-    Tag, CardShopItem,
+    CardShopItem,
     Group
 )
 
-admin.site.register(Tag)
 admin.site.register(CardShopItem)
 admin.site.register(Group)

@@ -1,26 +1,4 @@
 from django.db import models
-from colorfield.fields import ColorField
-
-from .validator import is_valid_hexa_code
-
-
-class Tag(models.Model):
-    name = models.CharField(
-        unique=True,
-        max_length=100,
-    )
-    color = ColorField(
-        validators=[is_valid_hexa_code],
-        unique=True,
-    )
-    slug = models.SlugField(
-        unique=True,
-        max_length=30
-    )
-
-    class Meta:
-        verbose_name = 'Тег'
-        verbose_name_plural = 'Тэги'
 
 
 class Group(models.Model):
@@ -50,6 +28,17 @@ class CardShopItem(models.Model):
         ('XL', 'XL'),
         ('XXL', 'XXL'),
     )
+    TAGS = (
+        ('Shoes', 'Shoes'),
+        ('Socks', 'Socks'),
+        ('Underpants', 'Underpants'),
+        ('Trousers', 'Trousers'),
+        ('Shorts', 'Shorts'),
+        ('T-shirt', 'T-shirt'),
+        ('Hoodie', 'Hoodie'),
+        ('Jacket', 'Jacket'),
+        ('Sweater', 'Sweater'),
+    )
     name = models.CharField(
         max_length=100
     )
@@ -62,13 +51,13 @@ class CardShopItem(models.Model):
         null=False,
     )
     image = models.ImageField(
-        upload_to='media/recipes/images/',
+        upload_to='images/',
         blank=False,
         null=False,
     )
-    tags = models.ManyToManyField(
-        Tag,
-        max_length=100
+    tag = models.CharField(
+        choices=TAGS,
+        max_length=100,
     )
     group = models.ForeignKey(
         Group,
@@ -77,6 +66,16 @@ class CardShopItem(models.Model):
         on_delete=models.SET_NULL,
         related_name='shop_card',
         help_text='Магазин к которому будет относиться этот лот',
+    )
+    prise = models.IntegerField(
+        blank=False,
+        null=False,
+        default=0
+    )
+    amount = models.IntegerField(
+        blank=False,
+        null=False,
+        default=0
     )
 
     def __str__(self):
