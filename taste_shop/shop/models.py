@@ -2,13 +2,31 @@ from django.db import models
 
 
 class Group(models.Model):
-    title = models.CharField(verbose_name='Заголовок', max_length=200)
+    title = models.CharField(
+        verbose_name='Заголовок',
+        max_length=200
+    )
     slug = models.SlugField(
         max_length=255,
         unique=True,
         verbose_name='URL',
     )
-    description = models.TextField(null=True, blank=True)
+    image = models.ImageField(
+        upload_to='grup/img/',
+        blank=False,
+        null=False,
+        default=None
+    )
+    gif_m = models.ImageField(
+        upload_to='grup/img/',
+        blank=False,
+        null=False,
+        default=None
+    )
+    description = models.TextField(
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.title
@@ -51,7 +69,7 @@ class CardShopItem(models.Model):
         null=False,
     )
     image = models.ImageField(
-        upload_to='images/',
+        upload_to='shouse/',
         blank=False,
         null=False,
     )

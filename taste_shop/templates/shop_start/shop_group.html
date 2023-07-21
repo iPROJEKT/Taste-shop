@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    Whoa you came. Let's choose
+{% endblock %}
+{% block content %}
+{% for shop in page_obj %}
+    <article>
+        <div class="shop-car">
+            <a href="{{ shop.slug }}">
+                <div class="shop-image">
+                    <img src=/media/{{shop.image}} data-img="/media/{{shop.gif_m}}">
+                </div>
+            </a>
+        </div>
+    </article>
+{% endfor %}
+{% endblock %}

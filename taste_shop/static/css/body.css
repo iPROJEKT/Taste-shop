@@ -1,3 +1,5 @@
+/* STAST CSS*/
+
 body{
     width: 100%;
     max-width: 1700px;
@@ -10,15 +12,43 @@ header{
 article{
     display: flex;
 }
-body > main > div > article > div > div.lot-where_image_desk > div.lot-image > img{
-    width: 330px;
-    height: 400px;
+img{
+    width: 100%;
+    height: 100%;
 }
+/* STAST CSS*/
+
+/*CSS WITH SELEKTOR*/
+
 .article-lot{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin-top: 48px;
+    justify-content: space-around;
+}
+
+/*IMG*/
+.shop-image{
+    width: 548px;
+    height: 295px;
+    position: ;
+    text-align: center;
+    transition: all .1s ease-in-out .1s;
+    margin-top: 20px;
+}
+.lot-image{
+    width: 330px;
+    height: 400px;
+}
+/*IMG*/
+
 .lot-where_image_desk{
     display: flex;
     flex-direction: column;
@@ -35,13 +65,4 @@ body > main > div > article > div > div.lot-where_image_desk > div.lot-image > i
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-.container{
-    display: flex;
-    gap: 54px 20%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    margin-top: 48px;
-    justify-content: center;
 }
