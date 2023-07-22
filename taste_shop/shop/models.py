@@ -17,12 +17,6 @@ class Group(models.Model):
         null=False,
         default=None
     )
-    gif_m = models.ImageField(
-        upload_to='grup/img/',
-        blank=False,
-        null=False,
-        default=None
-    )
     description = models.TextField(
         null=True,
         blank=True

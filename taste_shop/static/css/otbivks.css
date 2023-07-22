@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin-top: 48px;
+    justify-content: space-around;
+    gap: 62px;
+}
+.choise_start_qes{
+    font-family: 'Roboto', sans-serif;
+}
+.sample-header:hover{
+    transform: scale(1.1);
+}

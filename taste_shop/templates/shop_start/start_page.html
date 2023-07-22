@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" href="{% static 'img/fav/126122.png'%}" type="image">
+      <meta name="msapplication-TileColor" content="#000">
+      <meta name="theme-color" content="#ffffff">
+      <link rel="stylesheet" href="{% static 'css/headeR.css'%}">
+      <link rel="stylesheet" href="{% static 'css/otbivks.css'%}">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+      <title>Oh yes McQueen is ready</title>
+    </head>
+  <body>
+    <header>
+      {% include 'includes/header.html' %}
+    </header>
+    <main>
+      <div class="container">
+        <h1 class="choise_start_qes">What do you want?</h1>
+          <a class="sample-header background_image_first" href="{% url 'shop:shop_iews'%}">
+              <div class="sample-header-section">
+                  <h1>You can still buy stylish clothes?</h1>
+              </div>
+          </a>
+          <a class="sample-header background_image_aut" href="{% url 'shop:shop_iews'%}">
+              <div class="sample-header-section">
+                  <h1>Maybe learn something about the author of the project?</h1>
+              </div>
+          </a>
+          <a class="sample-header background_image_mus" href="{% url 'shop:shop_iews'%}">
+              <div class="sample-header-section">
+                  <h1>Or maybe listen to the author's playlist under which he completed this project?</h1>
+              </div>
+          </a>
+      </div>
+    </main>
+    <footer>
+      {% include 'includes/footer.html' %}
+    </footer>
+  </body>
+</html>

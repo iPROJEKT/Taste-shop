@@ -1,11 +1,31 @@
+.background_image_header{
+    background-image: url("/static/img/Shet.png");
+}
+.background_image_first{
+    background-image: url("/static/img/img_for_choise.jpg");
+}
+.background_image_aut{
+    background-image: url("/static/img/otbivkf.png");
+}
+.background_image_mus{
+    background-image: url("/static/img/maxresdefault.jpg");
+}
+sample-header_n{
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .sample-header {
   left: 0;
   top: 0;
   width: 100%;
-  background-image: url("https://cdn.sportmaster.ru/upload/content/cmsgate/ru_sm/smprod/media/cms_auto_upload/skateboarding-444556091.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  transition: all .2s ease-in-out;
 }
 .sample-header-section {
   position: relative;
@@ -25,4 +45,3 @@ h2 {
   font-weight: 300;
   text-align: center;
 }
-

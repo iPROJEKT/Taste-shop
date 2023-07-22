@@ -1,8 +1,13 @@
+
 from django.shortcuts import get_object_or_404, render
 
 from .models import Group
 
 app_name = 'posts'
+
+
+def index(request):
+    return render(request, 'shop_start/start_page.html')
 
 
 def cloth_iews(request, slug):
