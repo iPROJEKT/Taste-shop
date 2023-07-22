@@ -10,6 +10,9 @@
 .background_image_mus{
     background-image: url("/static/img/maxresdefault.jpg");
 }
+.background_image_partne{
+    background-image: url("/static/img/partners.jpg");
+}
 sample-header_n{
   left: 0;
   top: 0;

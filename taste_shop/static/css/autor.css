@@ -1,0 +1,68 @@
+.title_plus_photo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    text-align: center;
+}
+.stars_item{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    font-size: 14em;
+}
+.img{
+    position: absolute;
+    width: 43%;
+    height: 43%;
+    z-index: -1;
+}
+.about_block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    margin-top: 100px;
+}
+.about{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+body{
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+    position: relative;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 1000,
+  'GRAD' 200,
+  'opsz' 48
+}
+.sample-header{
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all .2s ease-in-out;
+}
+.sample-header-section {
+  position: relative;
+  padding: 15% 0 10%;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Roboto', sans-serif;
+}
+.end_about{
+    margin-top: 100px;
+    background-image: url("/static/img/img_for_choise.jpg");
+    margin-bottom: 100px;
+}

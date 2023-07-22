@@ -1,9 +1,13 @@
-
 from django.shortcuts import get_object_or_404, render
+from django.views.generic.base import TemplateView
 
 from .models import Group
 
 app_name = 'posts'
+
+
+class AboutAuthorView(TemplateView):
+    template_name = 'about/author.html'
 
 
 def index(request):

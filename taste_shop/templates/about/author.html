@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="icon" href="{% static 'img/fav/126122.png'%}" type="image">
+          <meta name="msapplication-TileColor" content="#000">
+          <meta name="theme-color" content="#ffffff">
+          <link rel="stylesheet" href="{% static 'css/autor.css'%}">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+          <title>Oh yes McQueen is ready</title>
+    </head>
+    <body>
+        <div class="title_plus_photo">
+            <h1 class="stars_item">Leeeeeeeeeeet's go</h1>
+            <img src="/static/img/Screenshot_2.png" class="img">
+        </div>
+        <div class="about_block">
+            <img src="/static/img/ab.jpg" class="img_ab">
+            <div class="about">
+                Опа вот так подстава, я по англиски не шпрехан.
+                Если серьезно, то меня Сергей, мне 17 и я backend разраб (поэтому такой крутой дизайн).
+                Проживаю на отшибе Питера (Чертово Девяткино)
+                Кстити я подключил шрифт Roboto и не собираюсь его менять
+                Если вдруг ты читаешь этот текст, то я чудом попал на собес, а если нет - моя телеграмка
+                @IprojektOnAWP. А еще люблю играть в баскет и на гиатре<span class="material-symbols-outlined">sports_basketball</span>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            </div>
+        </div>
+        <div class="end_about">
+            <a class="sample-header" href="{% url 'shop:shop_iews'%}">
+              <div class="sample-header-section">
+                  <h1>You can still buy stylish clothes?</h1>
+              </div>
+          </a>
+        </div>
+    </body>
+</html>
