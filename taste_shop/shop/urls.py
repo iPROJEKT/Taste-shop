@@ -6,7 +6,7 @@ app_name = 'shop'
 
 urlpatterns = [
 
-    path('', index, name='grup_iews'),
+    path('', index, name='index'),
     path('au/', AboutAuthorView.as_view(), name='author'),
     path('shop/', shop_iews, name='shop_iews'),
     path('shop/<slug:slug>/', cloth_iews, name='cloth_iews'),

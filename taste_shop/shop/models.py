@@ -1,36 +1,6 @@
 from django.db import models
 
 
-class Group(models.Model):
-    title = models.CharField(
-        verbose_name='Заголовок',
-        max_length=200
-    )
-    slug = models.SlugField(
-        max_length=255,
-        unique=True,
-        verbose_name='URL',
-    )
-    image = models.ImageField(
-        upload_to='grup/img/',
-        blank=False,
-        null=False,
-        default=None
-    )
-    description = models.TextField(
-        null=True,
-        blank=True
-    )
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        ordering = ('title',)
-        verbose_name = 'Магазин'
-        verbose_name_plural = 'Магазины'
-
-
 class CardShopItem(models.Model):
     SIZE = (
         ('XS', 'XS'),
@@ -71,13 +41,10 @@ class CardShopItem(models.Model):
         choices=TAGS,
         max_length=100,
     )
-    group = models.ForeignKey(
-        Group,
-        blank=True,
-        null=True,
-        on_delete=models.SET_NULL,
-        related_name='shop_card',
-        help_text='Магазин к которому будет относиться этот лот',
+    slug = models.SlugField(
+        max_length=255,
+        unique=True,
+        verbose_name='URL',
     )
     prise = models.IntegerField(
         blank=False,
