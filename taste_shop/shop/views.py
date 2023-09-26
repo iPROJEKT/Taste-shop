@@ -1,37 +1,51 @@
-from django.shortcuts import get_object_or_404, render
-from django.views.generic.base import TemplateView
+from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.conf import settings
 
-from .models import CardShopItem
-
-app_name = 'posts'
+from .models import CardShopItem, Comment
 
 
-class AboutAuthorView(TemplateView):
-    template_name = 'about/author.html'
+def page_breakdown(page_number, objects):
+    paginator = Paginator(objects, settings.COUNT_POST)
+    return paginator.get_page(page_number)
+
+
+def author(request):
+    context = {
+        'title': 'Автор сего чуда'
+    }
+    return render(request, 'about.html', context)
 
 
 def index(request):
     lot = CardShopItem.objects.all()
+    coments = Comment.objects.select_related(
+        'post'
+    ).count()
     context = {
-        'page_obj': lot
+        'page_obj': lot,
+        'comment_count': coments,
+        'title': 'Stonks'
     }
     return render(request, 'index.html', context)
 
 
-def cloth_iews(request, slug):
-    group = get_object_or_404(Group, slug=slug)
-    lot = group.shop_card.select_related(
-        'group'
-    )
+def contact(request):
     context = {
-        'page_obj': lot
+        'title': 'Контакты'
     }
-    return render(request, 'shop_start/в', context)
+    return render(request, 'contact.html', context)
 
 
-def shop_iews(request):
-    shop = Group.objects.all()
+def product(request):
+    lot = CardShopItem.objects.all()
+    coments = Comment.objects.select_related(
+        'post'
+    ).count()
+    page_number = request.GET.get('page')
     context = {
-        'page_obj': shop
+        'page_obj': page_breakdown(page_number, lot),
+        'comment_count': coments,
+        'title': 'Контакты'
     }
-    return render(request, 'shop_start/shop_group.html', context)
+    return render(request, 'products.html', context)

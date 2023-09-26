@@ -94,4 +94,4 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     }
 }
-COUNT_POST = 10
+COUNT_POST = 3

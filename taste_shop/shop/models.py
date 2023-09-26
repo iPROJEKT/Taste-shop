@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 
 class CardShopItem(models.Model):
@@ -64,3 +68,35 @@ class CardShopItem(models.Model):
         ordering = ('name',)
         verbose_name = 'Лот'
         verbose_name_plural = 'Одежда'
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(
+        CardShopItem,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name='К лоту',
+        blank=True,
+    )
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='comments',
+        verbose_name='Автор',
+    )
+    text = models.TextField(
+        verbose_name='Текст комментария',
+        help_text='Введите текст комментария',
+    )
+    created = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Дата публикации',
+    )
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
+
+    def __str__(self):
+        return 'Комментарий'

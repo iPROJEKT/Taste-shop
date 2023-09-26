@@ -1,13 +1,12 @@
 from django.urls import path
 
-from .views import cloth_iews, shop_iews, index, AboutAuthorView
+from .views import index, author, contact, product
 
 app_name = 'shop'
 
 urlpatterns = [
-
     path('', index, name='index'),
-    path('au/', AboutAuthorView.as_view(), name='author'),
-    path('shop/', shop_iews, name='shop_iews'),
-    path('shop/<slug:slug>/', cloth_iews, name='cloth_iews'),
+    path('autor/', author, name='autor'),
+    path('contact/', contact, name='contact'),
+    path('product/', product, name='product')
 ]

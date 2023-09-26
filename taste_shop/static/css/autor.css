@@ -66,3 +66,6 @@ body{
     background-image: url("/static/img/img_for_choise.jpg");
     margin-bottom: 100px;
 }
+.text_about_me{
+    font-size: 25px;
+}
