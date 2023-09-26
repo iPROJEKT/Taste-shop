@@ -1,4 +1,5 @@
-![image](https://github.com/iPROJEKT/Taste-shop/assets/108357574/1923a0da-c933-4705-a4dc-40d1f1f5c4b9)# Taste-shop
+![image](https://github.com/iPROJEKT/Taste-shop/assets/108357574/201035b6-7a5c-4d4c-8c22-be78204ea4f6)
+# Taste-shop
 Пет-проект на Django(крутой магазин для крутых ребят)
 Ну что-ж вот оно и настало
 
