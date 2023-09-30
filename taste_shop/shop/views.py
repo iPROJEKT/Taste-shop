@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.conf import settings
 
@@ -8,13 +8,6 @@ from .models import CardShopItem, Comment
 def page_breakdown(page_number, objects):
     paginator = Paginator(objects, settings.COUNT_POST)
     return paginator.get_page(page_number)
-
-
-def author(request):
-    context = {
-        'title': 'Автор сего чуда'
-    }
-    return render(request, 'about.html', context)
 
 
 def index(request):
@@ -27,14 +20,14 @@ def index(request):
         'comment_count': coments,
         'title': 'Stonks'
     }
-    return render(request, 'index.html', context)
+    return render(request, 'shop/index.html', context)
 
 
 def contact(request):
     context = {
         'title': 'Контакты'
     }
-    return render(request, 'contact.html', context)
+    return render(request, 'shop/contact.html', context)
 
 
 def product(request):
@@ -48,4 +41,19 @@ def product(request):
         'comment_count': coments,
         'title': 'Контакты'
     }
-    return render(request, 'products.html', context)
+    return render(request, 'shop/products.html', context)
+
+
+def item(request, lot_id):
+    lot = get_object_or_404(Comment, id=lot_id)
+    context = {
+        'lot': lot,
+    }
+    return render(request, 'shop/item.html', context)
+
+
+def author(request):
+    context = {
+        'title': 'Автор сего чуда'
+    }
+    return render(request, 'shop/about.html', context)

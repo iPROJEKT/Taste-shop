@@ -44,11 +44,11 @@
           {% for lot in page_obj %}
           <div class="col-md-4">
             <div class="product-item">
-              <a href="{{ lot.slug }}"><img src="/media/{{ lot.image }}" alt=""></a>
+              <a href="{% url 'shop:item' lot.id %}"><img src="/media/{{ lot.image }}" alt=""></a>
               <div class="down-content">
-                <a href="{{ lot.slug }}"><h4>{{ lot.name }}</h4></a>
+                <a href="{% url 'shop:item' lot.id %}"><h4>{{ lot.name }}</h4></a>
                 <h6>${{ lot.prise }}</h6>
-                <p>{{ lot.description }}</p>
+                <p>{{ lot.description| truncatewords:4 }}</p>
                 <span>Reviews ({{ comment_count }})</span>
               </div>
             </div>

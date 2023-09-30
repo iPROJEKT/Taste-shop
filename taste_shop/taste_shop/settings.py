@@ -85,13 +85,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 LOGIN_URL = 'users:login'
-LOGIN_REDIRECT_URL = 'posts:index'
-CSRF_FAILURE_VIEW = 'core.views.csrf_failure'
+LOGIN_REDIRECT_URL = 'shop:index'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-    }
-}
 COUNT_POST = 3
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
